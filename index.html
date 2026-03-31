@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
@@ -20,11 +20,7 @@
   <div class="site-shell">
     <header class="topbar">
       <a class="brand" href="#home">
-        <span class="brand-mark">AC</span>
-        <span class="brand-copy">
-          <strong>AnkaCore</strong>
-          <span>Business & Property</span>
-        </span>
+        <img class="brand-logo" src="Ankacore-logowithname.png" alt="AnkaCore logo">
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,92 +29,102 @@
       </button>
 
       <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Properties</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#portfolio" data-i18n="navExperience">Experience</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+          <button class="lang-button" type="button" data-lang="tr">TR</button>
+        </div>
       </nav>
     </header>
 
     <main id="home">
       <section class="hero reveal">
         <div class="hero-copy">
-          <p class="eyebrow">Professional profile website</p>
-          <h1>Present your work, your properties, and your reputation with clarity.</h1>
-          <p class="hero-text">
-            Built for professionals who want a confident online presence that combines personal credibility,
-            business services, and property or portfolio highlights in one clean destination.
+          <p class="eyebrow" data-i18n="heroEyebrow">Executive cloud, security, and platform advisory</p>
+          <h1 data-i18n="heroTitle">Enterprise cloud transformation leadership with the flexibility of an independent firm.</h1>
+          <p class="hero-text" data-i18n="heroText">
+            AnkaCore presents a senior executive profile built on 30+ years in IT, including 18 years at
+            Microsoft, delivering secure cloud architecture, DevOps modernization, Kubernetes platforms, and
+            large-scale enterprise transformation across Europe, MEA, and Africa.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#contact">Book a Consultation</a>
-            <a class="button secondary" href="#portfolio">Explore Portfolio</a>
+            <a class="button primary" href="#contact" data-i18n="heroPrimaryCta">Book an Executive Consultation</a>
+            <a class="button secondary" href="#portfolio" data-i18n="heroSecondaryCta">View Experience Highlights</a>
           </div>
           <ul class="metrics">
             <li>
-              <strong>10+</strong>
-              <span>Years of experience</span>
+              <strong>30+</strong>
+              <span data-i18n="metricOne">Years in IT leadership</span>
             </li>
             <li>
-              <strong>50+</strong>
-              <span>Clients advised</span>
+              <strong>18</strong>
+              <span data-i18n="metricTwo">Years at Microsoft</span>
             </li>
             <li>
-              <strong>12</strong>
-              <span>Featured properties</span>
+              <strong>5,000+</strong>
+              <span data-i18n="metricThree">Workloads migrated</span>
             </li>
           </ul>
         </div>
 
         <div class="hero-card">
           <div class="card-glow"></div>
+          <div class="hero-logo-wrap">
+            <img class="hero-logo" src="ankacore-logo.png" alt="AnkaCore emblem">
+          </div>
           <div class="profile-panel">
-            <p>Professional Snapshot</p>
-            <h2>Your Name Here</h2>
-            <span>Business Consultant • Property Advisor • Entrepreneur</span>
+            <p data-i18n="snapshotLabel">Professional Snapshot</p>
+            <h2 data-i18n="snapshotTitle">Cloud & DevOps Executive</h2>
+            <span data-i18n="snapshotSubtitle">AnkaCore • Independent Advisory • Enterprise Delivery</span>
           </div>
           <div class="profile-grid">
             <article>
-              <span>Focus</span>
-              <strong>Business Growth</strong>
+              <span data-i18n="gridOneLabel">Focus</span>
+              <strong data-i18n="gridOneValue">Cloud Architecture</strong>
             </article>
             <article>
-              <span>Specialty</span>
-              <strong>Property Strategy</strong>
+              <span data-i18n="gridTwoLabel">Specialty</span>
+              <strong data-i18n="gridTwoValue">AKS, ARO & Zero-Trust</strong>
             </article>
             <article>
-              <span>Approach</span>
-              <strong>Trust + Execution</strong>
+              <span data-i18n="gridThreeLabel">Approach</span>
+              <strong data-i18n="gridThreeValue">Strategy + Execution</strong>
             </article>
             <article>
-              <span>Reach</span>
-              <strong>Local & International</strong>
+              <span data-i18n="gridFourLabel">Reach</span>
+              <strong data-i18n="gridFourValue">Europe, MEA & Africa</strong>
             </article>
           </div>
         </div>
       </section>
 
       <section class="trusted reveal">
-        <p>Trusted positioning for consultants, brokers, founders, and independent professionals.</p>
+        <p data-i18n="trustedText">Trusted by enterprise environments in banking, automotive, and public sector transformation programs.</p>
       </section>
 
       <section class="about reveal" id="about">
         <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>A site that explains who you are and why people should work with you.</h2>
+          <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
+          <h2 data-i18n="aboutTitle">Executive-level expertise delivered through a focused independent brand.</h2>
         </div>
         <div class="about-layout">
           <article class="about-card">
-            <h3>Your profession, stated simply</h3>
-            <p>
-              Introduce your line of work with a short, confident summary. This section is ideal for your
-              experience, credentials, industries served, and what makes your approach different.
+            <h3 data-i18n="aboutCardOneTitle">Strategic advisor and hands-on transformation leader</h3>
+            <p data-i18n="aboutCardOneText">
+              AnkaCore is positioned for organizations that need senior leadership in cloud, DevOps, security,
+              and platform engineering without sacrificing technical depth. The profile combines architecture,
+              governance, delivery leadership, and executive communication.
             </p>
           </article>
           <article class="about-card accent">
-            <h3>Built to support your business goals</h3>
-            <p>
-              Use this website to attract clients, present service packages, showcase real estate or portfolio
-              assets, and give prospects a trustworthy first impression before they contact you.
+            <h3 data-i18n="aboutCardTwoTitle">Built for freelance flexibility with company-grade credibility</h3>
+            <p data-i18n="aboutCardTwoText">
+              The business model supports advisory, architecture, and transformation engagements as an
+              independent executive consultant operating with the structure, standards, and presence of a
+              specialized cloud and security firm.
             </p>
           </article>
         </div>
@@ -126,55 +132,55 @@
 
       <section class="services reveal" id="services">
         <div class="section-heading">
-          <p class="eyebrow">Services</p>
-          <h2>Show the value you provide in clear, business-ready language.</h2>
+          <p class="eyebrow" data-i18n="servicesEyebrow">Services</p>
+          <h2 data-i18n="servicesTitle">Advisory and delivery services for secure, enterprise-scale transformation.</h2>
         </div>
         <div class="service-grid">
           <article class="service-card">
-            <h3>Professional Consulting</h3>
-            <p>Position your advisory work, strategic guidance, and high-level expertise for decision-makers.</p>
+            <h3 data-i18n="serviceOneTitle">Cloud Architecture & Landing Zones</h3>
+            <p data-i18n="serviceOneText">Enterprise-scale Azure architecture, governance, networking, and landing zone design aligned to CAF and Well-Architected principles.</p>
           </article>
           <article class="service-card">
-            <h3>Property Presentation</h3>
-            <p>Feature investment properties, developments, rentals, or premium listings with confidence.</p>
+            <h3 data-i18n="serviceTwoTitle">Kubernetes & Platform Engineering</h3>
+            <p data-i18n="serviceTwoText">AKS and Azure Red Hat OpenShift platforms, microservices foundations, security reviews, and production-ready operating models.</p>
           </article>
           <article class="service-card">
-            <h3>Client Representation</h3>
-            <p>Describe how you manage negotiations, sourcing, due diligence, or end-to-end project support.</p>
+            <h3 data-i18n="serviceThreeTitle">Zero-Trust Security & Compliance</h3>
+            <p data-i18n="serviceThreeText">Security architecture, high-trust enterprise controls, pipeline hardening, and governance models for regulated environments.</p>
           </article>
           <article class="service-card">
-            <h3>Business Partnerships</h3>
-            <p>Invite collaborations, investors, or service partners with a more credible public-facing profile.</p>
+            <h3 data-i18n="serviceFourTitle">DevOps, IaC & AI Enablement</h3>
+            <p data-i18n="serviceFourText">Terraform, Ansible, GitHub, Azure DevOps, and AI-assisted engineering workflows to improve delivery speed and consistency.</p>
           </article>
         </div>
       </section>
 
       <section class="portfolio reveal" id="portfolio">
         <div class="section-heading">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Highlight featured properties, projects, or signature work.</h2>
+          <p class="eyebrow" data-i18n="portfolioEyebrow">Experience Highlights</p>
+          <h2 data-i18n="portfolioTitle">Representative transformation outcomes from executive and enterprise roles.</h2>
         </div>
         <div class="portfolio-grid">
           <article class="portfolio-card tall">
-            <span class="tag">Featured Property</span>
-            <h3>Luxury Residential Listing</h3>
-            <p>Use this block for a flagship property or premium business project with a concise outcome-focused summary.</p>
+            <span class="tag" data-i18n="portfolioOneTag">Banking Transformation</span>
+            <h3 data-i18n="portfolioOneTitle">5,000+ Workloads Migrated for a Major South African Bank</h3>
+            <p data-i18n="portfolioOneText">Led large-scale migration and modernization initiatives with governance, security, and operational resilience at enterprise scale.</p>
           </article>
           <article class="portfolio-card">
-            <span class="tag">Commercial</span>
-            <h3>Office or Retail Space</h3>
-            <p>Present location strengths, market positioning, and the opportunity clearly.</p>
+            <span class="tag">VeriPark</span>
+            <h3 data-i18n="portfolioTwoTitle">Secure Banking Platforms on Azure</h3>
+            <p data-i18n="portfolioTwoText">Directed Cloud Infrastructure and DevOps teams to design and deploy highly secure banking solutions with Terraform and Zero-Trust architecture.</p>
           </article>
           <article class="portfolio-card">
-            <span class="tag">Consulting</span>
-            <h3>Growth Strategy Engagement</h3>
-            <p>Share the kind of transformation or measurable value you delivered.</p>
+            <span class="tag">Microsoft</span>
+            <h3 data-i18n="portfolioThreeTitle">CAF & Well-Architected Assessments at Scale</h3>
+            <p data-i18n="portfolioThreeText">Delivered 3 to 4 enterprise projects weekly across architecture, governance, security, and modernization engagements.</p>
           </article>
           <article class="portfolio-card wide">
-            <span class="tag">Investment</span>
-            <h3>Portfolio Advisory & Acquisition Support</h3>
-            <p>
-              Combine professional expertise and property insight in one story that shows both judgment and results.
+            <span class="tag" data-i18n="portfolioFourTag">Platform Security</span>
+            <h3 data-i18n="portfolioFourTitle">Kubernetes, ARO, AKS, and Enterprise Security Reviews</h3>
+            <p data-i18n="portfolioFourText">
+              Designed microservices platforms, performed Kubernetes security audits, and introduced secure DevOps and AI-assisted engineering practices for global enterprise customers.
             </p>
           </article>
         </div>
@@ -182,24 +188,24 @@
 
       <section class="process reveal">
         <div class="section-heading">
-          <p class="eyebrow">Process</p>
-          <h2>Make it easy for new clients to understand how working with you begins.</h2>
+          <p class="eyebrow" data-i18n="processEyebrow">Process</p>
+          <h2 data-i18n="processTitle">A simple engagement model for executive advisory and transformation delivery.</h2>
         </div>
         <div class="process-list">
           <article>
             <strong>01</strong>
-            <h3>Discovery Call</h3>
-            <p>Understand the client need, project type, and timeline.</p>
+            <h3 data-i18n="processOneTitle">Executive Discovery</h3>
+            <p data-i18n="processOneText">Clarify the business objective, platform landscape, risk profile, and delivery priorities.</p>
           </article>
           <article>
             <strong>02</strong>
-            <h3>Tailored Proposal</h3>
-            <p>Present a solution, service structure, or property shortlist.</p>
+            <h3 data-i18n="processTwoTitle">Architecture & Advisory Plan</h3>
+            <p data-i18n="processTwoText">Define the roadmap, governance model, security approach, and engineering operating pattern.</p>
           </article>
           <article>
             <strong>03</strong>
-            <h3>Execution</h3>
-            <p>Move from planning into delivery with clear communication and follow-through.</p>
+            <h3 data-i18n="processThreeTitle">Delivery & Enablement</h3>
+            <p data-i18n="processThreeText">Support implementation, uplift internal teams, and drive measurable outcomes across the engagement.</p>
           </article>
         </div>
       </section>
@@ -207,27 +213,27 @@
       <section class="contact reveal" id="contact">
         <div class="contact-panel">
           <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Ready to turn your professional profile into a stronger online presence?</h2>
-            <p>
-              Replace this sample content with your real phone number, email address, service areas, and business
-              name, and the site is ready to present you professionally.
+            <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+            <h2 data-i18n="contactTitle">Discuss cloud architecture, security, Kubernetes platforms, or enterprise modernization.</h2>
+            <p data-i18n="contactText">
+              Available for advisory, architecture leadership, secure cloud transformation, DevOps modernization,
+              Zero-Trust programs, and executive-level consulting engagements delivered through AnkaCore.
             </p>
           </div>
           <form class="contact-form">
             <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your client name">
+              <span data-i18n="nameLabel">Name</span>
+              <input type="text" name="name" placeholder="Your client name" data-i18n-placeholder="namePlaceholder">
             </label>
             <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="name@example.com">
+              <span data-i18n="emailLabel">Email</span>
+              <input type="email" name="email" placeholder="name@example.com" data-i18n-placeholder="emailPlaceholder">
             </label>
             <label>
-              <span>Message</span>
-              <textarea name="message" rows="4" placeholder="Tell me about your business or property needs"></textarea>
+              <span data-i18n="messageLabel">Message</span>
+              <textarea name="message" rows="4" placeholder="Tell me about your cloud, security, platform, or transformation needs" data-i18n-placeholder="messagePlaceholder"></textarea>
             </label>
-            <button class="button primary" type="submit">Send Inquiry</button>
+            <button class="button primary" type="submit" data-i18n="contactButton">Send Inquiry</button>
           </form>
         </div>
       </section>
