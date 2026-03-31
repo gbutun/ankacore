@@ -1,17 +1,17 @@
 :root {
   --bg: #f4efe6;
-  --surface: rgba(251, 246, 239, 0.86);
+  --surface: transparent;
   --surface-strong: #fdf9f2;
   --ink: #31191f;
   --muted: #6a5458;
-  --line: rgba(102, 47, 58, 0.14);
+  --line: rgba(102, 47, 58, 0.12);
   --accent: #7c2635;
   --accent-deep: #5f1725;
   --accent-soft: #efe1e0;
-  --shadow: 0 24px 64px rgba(82, 38, 46, 0.12);
-  --radius-lg: 28px;
-  --radius-md: 20px;
-  --radius-sm: 14px;
+  --shadow: none;
+  --radius-lg: 0;
+  --radius-md: 0;
+  --radius-sm: 0;
 }
 
 * {
@@ -26,9 +26,9 @@ body {
   margin: 0;
   font-family: "Manrope", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(124, 38, 53, 0.12), transparent 32%),
-    radial-gradient(circle at right 20%, rgba(124, 38, 53, 0.08), transparent 24%),
-    linear-gradient(180deg, #f7f1e9 0%, #f1e9de 100%);
+    linear-gradient(180deg, rgba(124, 38, 53, 0.05) 0, rgba(124, 38, 53, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, #f7f1e9 0%, #f2ebe1 100%);
+  background-size: 100% 160px, 100% 100%;
   color: var(--ink);
 }
 
@@ -44,9 +44,9 @@ textarea {
 }
 
 .site-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1180px, calc(100% - clamp(20px, 4vw, 56px)));
   margin: 0 auto;
-  padding-bottom: 56px;
+  padding-bottom: 80px;
 }
 
 .topbar {
@@ -57,13 +57,11 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-top: 16px;
-  padding: 16px 20px;
-  background: rgba(252, 248, 242, 0.86);
-  border: 1px solid rgba(102, 47, 58, 0.08);
-  border-radius: 999px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
+  margin-top: 0;
+  padding: 22px 0 18px;
+  background: linear-gradient(180deg, rgba(247, 241, 233, 0.95), rgba(247, 241, 233, 0.82));
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
 }
 
 .brand {
@@ -88,9 +86,9 @@ textarea {
   align-items: center;
   gap: 6px;
   padding: 4px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(102, 47, 58, 0.16);
   border-radius: 999px;
-  background: rgba(255, 251, 247, 0.72);
+  background: rgba(255, 251, 247, 0.92);
 }
 
 .lang-button {
@@ -134,7 +132,9 @@ textarea {
 }
 
 section {
-  margin-top: 28px;
+  margin-top: 0;
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
 }
 
 .hero,
@@ -143,20 +143,17 @@ section {
 .portfolio,
 .process,
 .contact {
-  padding: 34px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
   background: var(--surface);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
 }
 
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 28px;
-  min-height: 72vh;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(28px, 4vw, 56px);
+  min-height: 76vh;
   align-items: center;
+  border-top: 0;
+  padding-top: 48px;
 }
 
 .eyebrow {
@@ -179,8 +176,9 @@ section {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
   max-width: 10ch;
+  text-wrap: balance;
 }
 
 .hero-text,
@@ -197,7 +195,7 @@ section {
 .hero-text {
   max-width: 62ch;
   margin: 20px 0 0;
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.5vw, 1.08rem);
 }
 
 .hero-actions {
@@ -231,12 +229,12 @@ section {
 
 .button.secondary {
   border-color: var(--line);
-  background: rgba(255, 250, 246, 0.62);
+  background: transparent;
 }
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
   gap: 14px;
   padding: 0;
   margin: 30px 0 0;
@@ -249,13 +247,14 @@ section {
 .service-card,
 .portfolio-card,
 .process-list article {
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: var(--radius-md);
+  border: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 .metrics li {
-  padding: 18px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line);
 }
 
 .metrics strong {
@@ -271,39 +270,30 @@ section {
 .hero-card {
   position: relative;
   overflow: hidden;
-  padding: 24px;
-  border-radius: 32px;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 38%),
-    linear-gradient(180deg, rgba(124, 38, 53, 0.98), rgba(79, 17, 31, 1));
-  color: #fef8ef;
-  min-height: 520px;
+  padding: 0 0 0 32px;
+  border-left: 1px solid var(--line);
+  color: var(--ink);
+  min-height: auto;
 }
 
 .card-glow {
-  position: absolute;
-  inset: auto auto 70% 65%;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: rgba(255, 221, 205, 0.18);
-  filter: blur(36px);
+  display: none;
 }
 
 .hero-logo-wrap {
   position: relative;
   z-index: 1;
-  display: grid;
-  place-items: center;
-  min-height: 220px;
-  margin-bottom: 14px;
+  display: flex;
+  justify-content: flex-start;
+  min-height: auto;
+  margin-bottom: 24px;
 }
 
 .hero-logo {
-  width: min(100%, 260px);
+  width: min(100%, 220px);
   height: auto;
   opacity: 0.96;
-  filter: drop-shadow(0 14px 30px rgba(34, 5, 12, 0.22));
+  filter: none;
 }
 
 .profile-panel,
@@ -313,10 +303,9 @@ section {
 }
 
 .profile-panel {
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.06);
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
 }
 
 .profile-panel p,
@@ -325,7 +314,7 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.78rem;
-  color: rgba(255, 248, 239, 0.7);
+  color: var(--muted);
 }
 
 .profile-panel h2 {
@@ -336,15 +325,13 @@ section {
 
 .profile-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 22px;
+  margin-top: 20px;
 }
 
 .profile-grid article {
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.08);
+  padding: 0;
 }
 
 .profile-grid strong {
@@ -354,8 +341,8 @@ section {
 }
 
 .trusted {
-  padding: 18px 24px;
-  text-align: center;
+  padding: 26px 0;
+  text-align: left;
   color: var(--muted);
 }
 
@@ -369,19 +356,20 @@ section {
 .contact-panel h2 {
   font-size: clamp(2rem, 4vw, 3.6rem);
   max-width: 14ch;
+  text-wrap: balance;
 }
 
 .about-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 36px;
 }
 
 .about-card,
 .service-card,
 .portfolio-card,
 .process-list article {
-  padding: 24px;
+  padding: 0;
 }
 
 .about-card h3,
@@ -394,22 +382,22 @@ section {
 }
 
 .about-card.accent {
-  background: linear-gradient(180deg, #f6e9e6, #fbf2ea);
+  background: transparent;
 }
 
 .service-grid,
 .portfolio-grid,
 .process-list {
   display: grid;
-  gap: 18px;
+  gap: 28px;
 }
 
 .service-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .portfolio-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
 }
 
 .portfolio-card {
@@ -417,17 +405,13 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background:
-    linear-gradient(180deg, rgba(124, 38, 53, 0.02), rgba(124, 38, 53, 0.12)),
-    linear-gradient(135deg, #fdf8f2, #efe3de);
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
 }
 
 .portfolio-card.tall {
   grid-row: span 2;
   min-height: 100%;
-  background:
-    linear-gradient(180deg, rgba(124, 38, 53, 0.08), rgba(124, 38, 53, 0.24)),
-    linear-gradient(135deg, #f3e0e0, #f8eee5);
 }
 
 .portfolio-card.wide {
@@ -437,17 +421,18 @@ section {
 .tag {
   display: inline-flex;
   width: fit-content;
-  padding: 7px 10px;
+  padding: 0 0 8px;
   margin-bottom: 14px;
-  border-radius: 999px;
-  background: rgba(255, 251, 247, 0.7);
-  border: 1px solid rgba(102, 47, 58, 0.08);
+  border-radius: 0;
+  background: transparent;
+  border: 0;
   font-size: 0.78rem;
   font-weight: 700;
+  color: var(--accent-deep);
 }
 
 .process-list {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
 }
 
 .process-list strong {
@@ -458,18 +443,17 @@ section {
 
 .contact-panel {
   display: grid;
-  grid-template-columns: 1fr 0.95fr;
-  gap: 22px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.95fr);
+  gap: clamp(22px, 3vw, 40px);
   align-items: start;
 }
 
 .contact-form {
   display: grid;
   gap: 14px;
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: rgba(255, 251, 247, 0.68);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .contact-form label {
@@ -485,10 +469,11 @@ section {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid rgba(102, 47, 58, 0.14);
-  border-radius: var(--radius-sm);
-  background: rgba(255, 252, 248, 0.94);
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(102, 47, 58, 0.2);
+  border-radius: 0;
+  background: transparent;
   color: var(--ink);
 }
 
@@ -508,9 +493,12 @@ section {
 }
 
 @media (max-width: 1024px) {
+  .topbar {
+    gap: 18px;
+  }
+
   .hero,
   .contact-panel,
-  .service-grid,
   .process-list,
   .about-layout {
     grid-template-columns: 1fr;
@@ -518,6 +506,18 @@ section {
 
   .portfolio-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 36px;
+  }
+
+  .hero-card {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 26px;
   }
 
   .portfolio-card.tall,
@@ -536,7 +536,7 @@ section {
   .topbar {
     position: static;
     flex-wrap: wrap;
-    border-radius: 24px;
+    padding-top: 18px;
   }
 
   .brand-logo {
@@ -570,7 +570,7 @@ section {
   .portfolio,
   .process,
   .contact {
-    padding: 24px 18px;
+    padding: 40px 0;
   }
 
   .hero h1 {
@@ -586,5 +586,38 @@ section {
   .section-heading h2,
   .contact-panel h2 {
     max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-logo {
+    height: 42px;
+  }
+
+  .hero {
+    padding-top: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.2rem);
+  }
+
+  .metrics strong,
+  .profile-panel h2 {
+    font-size: 1.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
   }
 }
