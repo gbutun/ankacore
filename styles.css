@@ -387,7 +387,8 @@ section {
 
 .service-grid,
 .portfolio-grid,
-.process-list {
+.process-list,
+.cert-icon-grid {
   display: grid;
   gap: 28px;
 }
@@ -416,6 +417,63 @@ section {
 
 .portfolio-card.wide {
   grid-column: span 2;
+}
+
+.cert-page {
+  border-top: 0;
+  min-height: calc(100vh - 110px);
+}
+
+.cert-page-heading {
+  max-width: 760px;
+  margin-bottom: 36px;
+}
+
+.cert-page-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.cert-page-text {
+  max-width: 62ch;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cert-icon-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.cert-image-card {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.cert-image-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+  max-width: 24ch;
+}
+
+.cert-badge {
+  display: block;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.cert-badge--linux {
+  width: 110px;
+  height: 110px;
 }
 
 .tag {
