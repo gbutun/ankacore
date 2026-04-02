@@ -35,7 +35,7 @@ Examples:
   ./deploy.sh init nonprod
   ./deploy.sh plan nonprod
   ./deploy.sh apply nonprod 20260401T120000Z
-  ./deploy.sh plan nonprod --target azurerm_static_web_app.art_app
+  ./deploy.sh plan nonprod --target azurerm_static_web_app.ank_app
 EOF
 }
 

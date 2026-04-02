@@ -1,22 +1,24 @@
 # GitHub Actions Deployment for Nonprod Static Web App
 
-This guide explains how to deploy the Art App website from this repository to the existing nonprod Azure Static Web App by using GitHub Actions.
+This guide explains how to deploy the ank-app website from this repository to the nonprod Azure Static Web App created by Terraform and published through GitHub Actions.
 
 ## Current Nonprod Target
 
-- Static Web App name: `n-weu-art-swa-01-a01`
-- Resource group: `n-weu-rg-01-a01`
-- Default hostname: `red-glacier-0d0fc8003.2.azurestaticapps.net`
+- Static Web App name: `n-weu-ank-swa-01-a02`
+- Resource group: `n-weu-rg-01-a02`
+- Default hostname: `victorious-desert-0e019a503.2.azurestaticapps.net`
+
+These values were produced by the successful Terraform apply on April 2, 2026.
 
 The GitHub Actions workflow for this deployment is:
 
-- [../../../.github/workflows/deploy-nonprod-static-web-app.yml](/home/ronin/projects/art-app/.github/workflows/deploy-nonprod-static-web-app.yml)
+- [../../../.github/workflows/deploy-nonprod-static-web-app.yml](/home/ronin/projects/ankacore-business/.github/workflows/deploy-nonprod-static-web-app.yml)
 
 ## How This Deployment Works
 
 This repository uses an Azure Static Web Apps deployment token.
 
-- Terraform creates the Static Web App resource.
+- Terraform has already created the resource group and Static Web App resource for nonprod.
 - Terraform exposes the deployment token as `static_web_app_api_key`.
 - GitHub stores that token as a repository secret.
 - The workflow uploads the site files from the repository root to the Azure Static Web App.
@@ -25,15 +27,15 @@ The workflow does not log in to Azure with tenant, subscription, or service prin
 
 ## Prerequisites
 
-- The nonprod Azure Static Web App must already exist.
-- Terraform for `infra/terraform/nonprod` must already be initialized against the correct backend.
+- The nonprod Terraform stack in `infra/terraform/nonprod` must already be initialized against the correct backend.
+- The nonprod Terraform stack must already be applied successfully so the deployment token exists in state.
 - `gh` must be installed and authenticated if you want to set the secret from the terminal.
 - You must have permission to manage repository secrets in GitHub.
 
 ## Files Used by the Deployment
 
 - Website content is deployed from the repository root.
-- The workflow currently publishes top-level site files such as `index.html`, `styles.css`, `script.js`, `artists.html`, `artist.html`, and the related JavaScript data files.
+- The workflow currently publishes the top-level site files such as `index.html`, `styles.css`, and `script.js`.
 - The `k8s` folder is not part of this GitHub Actions deployment flow.
 
 ## Step 1: Confirm GitHub CLI Access
@@ -60,7 +62,7 @@ Run:
 terraform -chdir=infra/terraform/nonprod output -raw static_web_app_api_key
 ```
 
-This returns the Azure Static Web App deployment token for the nonprod resource.
+This returns the Azure Static Web App deployment token for `n-weu-ank-swa-01-a02`.
 
 Treat this token like a password. Anyone with it can deploy to the Static Web App.
 
@@ -93,7 +95,7 @@ In the repository:
 
 The workflow file is:
 
-- [../../../.github/workflows/deploy-nonprod-static-web-app.yml](/home/ronin/projects/art-app/.github/workflows/deploy-nonprod-static-web-app.yml)
+- [../../../.github/workflows/deploy-nonprod-static-web-app.yml](/home/ronin/projects/ankacore-business/.github/workflows/deploy-nonprod-static-web-app.yml)
 
 Key settings:
 
@@ -133,7 +135,7 @@ Check the GitHub Actions run:
 
 Then verify the site in Azure:
 
-- Default URL: `https://red-glacier-0d0fc8003.2.azurestaticapps.net`
+- Default URL: `https://victorious-desert-0e019a503.2.azurestaticapps.net`
 
 ## Troubleshooting
 

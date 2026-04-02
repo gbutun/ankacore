@@ -1,6 +1,6 @@
-# Art App Terraform
+# ank-app Terraform
 
-This folder is the new app-scoped Terraform root for deploying the Art App to Azure Static Web Apps.
+This folder is the app-scoped Terraform root for deploying ank-app to Azure Static Web Apps.
 
 It intentionally reuses only a few safe ideas from the older shared Terraform stack:
 
@@ -15,18 +15,16 @@ It does not reuse the older shared platform state, ARO resources, SQL, network, 
 
 - `providers.tf`: Terraform version, backend block, and provider configuration
 - `variables.tf`: input variables for the app stack
-- `main.tf`: resource group and Static Web App
+- `static-web-app.tf`: resource group and Static Web App
 - `outputs.tf`: useful deployment outputs
-- `terraform.tfvars.example`: starter variable values
-- `backend.hcl.example`: isolated backend configuration for this app
+- `terraform.tfvars`: environment-specific variable values
+- `backend.hcl`: isolated backend configuration for this app
 
 ## First Run
 
-1. Copy `terraform.tfvars.example` to `terraform.tfvars`
-2. Update values for your subscription and naming
-3. Copy `backend.hcl.example` to `backend.hcl`
-4. Point `backend.hcl` to the storage account and container that will hold this app's Terraform state
-5. Run:
+1. Update `terraform.tfvars` with your subscription and naming values
+2. Point `backend.hcl` to the storage account and container that will hold this app's Terraform state
+3. Run:
 
 ```bash
 terraform init -backend-config=backend.hcl
