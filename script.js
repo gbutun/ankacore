@@ -196,7 +196,9 @@ const translations = {
     emailPlaceholder: "name@example.com",
     messagePlaceholder: "Tell me about your cloud, security, platform, or transformation needs",
     contactButton: "Send Inquiry",
-    contactSuccess: "Inquiry Received"
+    contactSuccess: "Inquiry Received",
+    contactError: "There was a problem sending your inquiry.",
+    contactConfigError: "Add your Formspree form ID to activate this form."
   },
   tr: {
     navAbout: "Hakkında",
@@ -389,7 +391,9 @@ const translations = {
     emailPlaceholder: "isim@example.com",
     messagePlaceholder: "Bulut, güvenlik, platform veya dönüşüm ihtiyaçlarınızı paylaşın",
     contactButton: "Talep Gönder",
-    contactSuccess: "Talebiniz Alındı"
+    contactSuccess: "Talebiniz Alındı",
+    contactError: "Talebiniz gönderilirken bir sorun oluştu.",
+    contactConfigError: "Bu formu etkinleştirmek için Formspree form kimliğinizi ekleyin."
   }
 };
 
@@ -452,18 +456,46 @@ revealElements.forEach((element) => observer.observe(element));
 const form = document.querySelector(".contact-form");
 
 if (form) {
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const button = form.querySelector("button");
-    if (button) {
-      const originalText = button.textContent;
-      button.textContent = translations[currentLang].contactSuccess;
-      button.disabled = true;
+    const endpoint = form.getAttribute("action") || "";
+    const dict = translations[currentLang] || translations.en;
 
+    if (!button) {
+      return;
+    }
+
+    if (!endpoint || endpoint.includes("your-form-id")) {
+      window.alert(dict.contactConfigError);
+      return;
+    }
+
+    const originalText = button.textContent;
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      button.textContent = dict.contactSuccess;
+      form.reset();
+    } catch (error) {
+      button.textContent = dict.contactError;
+    } finally {
       window.setTimeout(() => {
-        button.textContent = translations[currentLang].contactButton || originalText;
+        button.textContent = dict.contactButton || originalText;
         button.disabled = false;
-        form.reset();
       }, 2200);
     }
   });

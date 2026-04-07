@@ -264,18 +264,23 @@
               Available for advisory, architecture leadership, enterprise cloud transformation, DevOps modernization, Cyber Security strategy, Kubernetes and OpenShift platform work, Zero-Trust programs, and executive-level consulting engagements delivered through AnkaCore.
             </p>
           </div>
-          <form class="contact-form">
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/mwvwyrkj"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New AnkaCore inquiry">
             <label>
               <span data-i18n="nameLabel">Name</span>
-              <input type="text" name="name" placeholder="Your client name" data-i18n-placeholder="namePlaceholder">
+              <input type="text" name="name" placeholder="Your client name" data-i18n-placeholder="namePlaceholder" required>
             </label>
             <label>
               <span data-i18n="emailLabel">Email</span>
-              <input type="email" name="email" placeholder="name@example.com" data-i18n-placeholder="emailPlaceholder">
+              <input type="email" name="email" placeholder="name@example.com" data-i18n-placeholder="emailPlaceholder" required>
             </label>
             <label>
               <span data-i18n="messageLabel">Message</span>
-              <textarea name="message" rows="4" placeholder="Tell me about your cloud, security, platform, or transformation needs" data-i18n-placeholder="messagePlaceholder"></textarea>
+              <textarea name="message" rows="4" placeholder="Tell me about your cloud, security, platform, or transformation needs" data-i18n-placeholder="messagePlaceholder" required></textarea>
             </label>
             <button class="button primary" type="submit" data-i18n="contactButton">Send Inquiry</button>
           </form>
