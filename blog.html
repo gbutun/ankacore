@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnkaCore Blog</title>
+  <meta
+    name="description"
+    content="Insights from AnkaCore on cloud architecture, cyber security, Kubernetes, DevOps, platform engineering, and enterprise transformation."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html#home">
+        <img class="brand-logo" src="Ankacore-logowithname.png" alt="AnkaCore logo">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav">
+        <a href="index.html#about" data-i18n="navAbout">About</a>
+        <a href="services.html" data-i18n="navServices">Services</a>
+        <a href="index.html#portfolio" data-i18n="navExperience">Experience</a>
+        <a href="certificates.html" data-i18n="navCertificates">Certificates</a>
+        <a href="faq.html" data-i18n="navFaq">FAQ</a>
+        <a href="blog.html" data-i18n="navBlog">Blog</a>
+        <a href="index.html#contact" data-i18n="navContact">Contact</a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-button is-active" type="button" data-lang="en">EN</button>
+          <button class="lang-button" type="button" data-lang="tr">TR</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="blog-page reveal">
+        <div class="section-heading blog-page-heading">
+          <p class="eyebrow" data-i18n="blogPageEyebrow">Blog</p>
+          <h1 class="blog-page-title" data-i18n="blogPageTitle">Ideas, architecture patterns, and field insights from cloud, security, and platform transformation work.</h1>
+          <p class="blog-page-text" data-i18n="blogPageText">This page gives AnkaCore a place to publish practical thinking for enterprise leaders, architects, platform teams, and transformation stakeholders. It helps reinforce expertise before a conversation even starts.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card tall">
+            <span class="tag" data-i18n="blogOneTag">Cloud Strategy</span>
+            <h3 data-i18n="blogOneTitle">Designing landing zones that support governance without slowing delivery</h3>
+            <p data-i18n="blogOneText">A perspective on balancing control, security, and speed when shaping enterprise cloud foundations.</p>
+          </article>
+          <article class="portfolio-card">
+            <span class="tag" data-i18n="blogTwoTag">Platform Engineering</span>
+            <h3 data-i18n="blogTwoTitle">What strong Kubernetes platforms actually give internal teams</h3>
+            <p data-i18n="blogTwoText">A practical view of how platform standards, automation, and operating models reduce friction for delivery teams.</p>
+          </article>
+          <article class="portfolio-card">
+            <span class="tag" data-i18n="blogThreeTag">Cyber Security</span>
+            <h3 data-i18n="blogThreeTitle">Why Zero-Trust needs architecture discipline, not only security tooling</h3>
+            <p data-i18n="blogThreeText">A concise angle on making security part of architecture, delivery patterns, and governance from the start.</p>
+          </article>
+          <article class="portfolio-card wide">
+            <span class="tag" data-i18n="blogFourTag">Transformation Leadership</span>
+            <h3 data-i18n="blogFourTitle">Why enterprise transformation succeeds when architecture and execution stay connected</h3>
+            <p data-i18n="blogFourText">An executive view on reducing the gap between strategic intent, engineering reality, and measurable business outcomes.</p>
+          </article>
+        </div>
+
+        <section class="contact reveal">
+          <div class="contact-panel">
+            <div>
+              <p class="eyebrow" data-i18n="blogCtaEyebrow">Continue the Discussion</p>
+              <h2 data-i18n="blogCtaTitle">If a topic here reflects a challenge you are facing, that can be the starting point for a practical advisory conversation.</h2>
+              <p data-i18n="blogCtaText">Cloud architecture, Kubernetes platforms, Zero-Trust, IaC, DevOps modernization, and AI-enabled delivery are all stronger when the discussion is grounded in real operating constraints and business goals.</p>
+            </div>
+            <div class="services-page-actions">
+              <a class="button primary" href="index.html#contact" data-i18n="blogCtaPrimary">Book an Executive Consultation</a>
+              <a class="button secondary" href="services.html" data-i18n="blogCtaSecondary">Review Services</a>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

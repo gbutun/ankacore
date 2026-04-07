@@ -434,6 +434,7 @@ section {
 }
 
 .faq-page,
+.blog-page,
 .services-page {
   border-top: 0;
   min-height: calc(100vh - 110px);
@@ -445,6 +446,7 @@ section {
 }
 
 .faq-page-heading,
+.blog-page-heading,
 .services-page-heading {
   max-width: 900px;
   margin-bottom: 40px;
@@ -461,6 +463,7 @@ section {
 }
 
 .faq-page-title,
+.blog-page-title,
 .services-page-title {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
@@ -478,6 +481,7 @@ section {
 }
 
 .faq-page-text,
+.blog-page-text,
 .services-page-text {
   max-width: 64ch;
   color: var(--muted);
