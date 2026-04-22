@@ -412,9 +412,9 @@ section {
 
 .portfolio-card {
   min-height: 240px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-content: end;
   border-top: 1px solid var(--line);
   padding-top: 18px;
 }
@@ -683,6 +683,8 @@ section {
 .tag {
   display: inline-flex;
   width: fit-content;
+  min-height: 1.75rem;
+  align-items: flex-end;
   padding: 0 0 8px;
   margin-bottom: 14px;
   border-radius: 0;
@@ -691,6 +693,10 @@ section {
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--accent-deep);
+}
+
+.portfolio-card p {
+  align-self: end;
 }
 
 .process-list {
